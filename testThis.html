@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="tap">000</div>
+<script>
+    var id=1;
+    function testBind(){
+        alert(this.id)
+    }
+    function Bind(fn,context) {
+        var self = this;
+        fn=function(){
+            self.apply(context);
+        };
+        return fn
+
+    }
+//    document.querySelector('#tap').addEventListener('click',window.testBind.bind(window));
+    document.querySelector('#tap').addEventListener('click',Bind(testBind,window))
+</script>
+</body>
+</html>
