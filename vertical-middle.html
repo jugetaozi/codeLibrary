@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 10px;
+        }
+        body>div{
+            height: 200px;
+            border:1px solid deepskyblue;
+        }
+        .vertical-float{
+            display: flex;
+            align-items: center;
+        }
+        .vertical-float span{
+            border:1px solid greenyellow;
+        }
+        .vertical-img img{
+            vertical-align:middle;
+            height: 100px;
+        }
+        .vertical-img span{
+            vertical-align:middle;
+            height: 100%;
+            display: inline-block;
+            padding: 0px;
+            margin: 0px;
+        }
+        .vertical-absolute{
+            position:relative;
+            width: 350px;
+        }
+        .vertical-absolute div{
+            width: 100px;
+            height: 100px;
+            border:1px solid greenyellow;
+            position:absolute;
+            left:0;
+            top:0;
+            right: 0;
+            bottom:0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>高度不定的元素在父元素中居中</h3>
+    <div class="vertical-float">
+        <span>col-2<br>col-2</span>
+        <span>123</span>
+        <span>col-3<br>col-3<br>col-3</span>
+    </div>
+    <h3>高度不定的多行文字垂直居中</h3>
+    <div class="vertical-float">
+        <span>第二行<br>第二行</span>
+        <span>123</span>
+        <span>三行<br>三行<br>三行还可以加几行</span>
+    </div>
+    <h3>高度不定的图片垂直居中</h3>
+    <div class="vertical-img">
+        <img src="./img/vertical-img.jpg" alt="">
+        <span></span>
+    </div>
+    <h3>绝对定位元素的居中，margin：auto方法</h3>
+    <div class="vertical-absolute">
+        <div>absolute元素</div>
+    </div>
+</body>
+</html>
