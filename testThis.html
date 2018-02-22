@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        input,label{
+            float: right;
+        }
+            input:checked+label{
+               color: green;
+            }
+
+    </style>
 </head>
 <body>
     <div id="tap">000</div>
+    <div>
+        <input id="brother" type="checkbox">
+        <label for="brother">test-brother-element</label>
+    </div>
 <script>
     var id=1;
     function testBind(){
