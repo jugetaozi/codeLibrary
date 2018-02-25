@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	html *{
+		margin: 0;
+		padding: 0;
+	}
+	.left{
+		background-color: red;
+		width: 100px
+	}
+	.right{
+		background-color: blue;
+		width:100px;
+	}
+	.layout{
+		margin-bottom: 10px
+	}
+	.layout,.left,.center,.right{
+		height: 100px
+	}
+</style>
+<body>
+	<section class="layout float">
+		<style type="text/css">
+			.layout.float .left{
+				float: left;
+
+			}
+			.layout.float .right{
+				float: right;
+			}
+		</style>
+		<article class="container">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="center">左右两列浮动</div>
+		</article>
+	</section>
+	<section class="layout grail">
+		<style type="text/css">
+			.layout.grail .center-wrap{
+				float: left;
+				width: 100%
+			}
+			.layout.grail .center{
+				margin: 0 100px;
+			}
+			.layout.grail .left{
+				float: left;
+				margin-left: -100%
+			}
+			.layout.grail .right{
+				float: left;
+				margin-left: -100px
+			}
+		</style>
+		<article class="container">
+			<div class="center-wrap">
+				<div class="center">圣杯布局</div>
+			</div>
+			<div class="left"></div>
+			<div class="right"></div>
+		</article>
+	</section>
+	<section class="layout absolute">
+		<style type="text/css">
+			.layout.absolute .left{
+				position:absolute;
+				left: 0;
+				width: 100px;
+			}
+			.layout.absolute .center{
+				position: absolute;
+				left: 100px;
+				right:100px;
+			}
+			.layout.absolute .right{
+				position: absolute;
+				right: 0;
+				width: 100px;
+			}
+		</style>
+		<article class="contanier">
+			<div class="left"></div>
+			<div class="center">
+				绝对定位
+			</div>
+			<div class="right"></div>
+		</article>
+	</section>
+	<section class="layout flex">
+		<style type="text/css">
+			.layout.flex .contanier{
+				display: flex
+			}
+			.layout.flex .left{
+				width: 100px;
+			}
+			.layout.flex .center{
+				flex: 1
+			}
+			.layout.flex .right{
+				width: 100px;
+			}
+		</style>
+		<article class="contanier">
+			<div class="left"></div>
+			<div class="center">
+				flex布局
+			</div>
+			<div class="right"></div>
+		</article>
+	</section>
+	<section class="layout table">
+		<style type="text/css">
+			.layout.table .contanier{
+				display: table;
+				width: 100%;//这里注意table属性的元素宽度是自适应的，必须手动设置宽度
+			}
+			.layout.table .contanier>div{
+				display: table-cell;//所有子元素都需要设置table-cell的属性，原理在于表格元素的宽度若不指定则跟随宽度自动调整
+			}
+			.layout.table .left{
+				width: 100px;
+			}
+			.layout.table .right{
+				width: 100px;
+			}
+		</style>
+		<article class="contanier">
+			<div class="left"></div>
+			<div class="center">
+				table布局
+			</div>
+			<div class="right"></div>
+		</article>
+	</section>
+</body>
+</html>
