@@ -30,6 +30,12 @@
             }
         }(j);
     }
-    console.log(arr_j[3]())//3
+    // console.log(arr_j[3]())//3
+
+    for (var i = 0; i < 5; i++) {
+      setTimeout((function(i) {
+        console.log(i);
+      })(i), i * 1000);
+    }
 </script>
 </html>
