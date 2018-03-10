@@ -14,15 +14,15 @@
         })
     }
     arr[0]();
-//    for(var j=0,arr_j=[];j<5;j++){
-//        arr_j.push((function (j) {
-//            return function(){
-//                console.log(j)
-//            }
-//        })(j))
-//    }
-//    arr_j[3]();
-//    console.log(arr_j[3]);
+    for(var j=0,arr_j=[];j<5;j++){
+        arr_j.push((function (j) {
+            return function(){
+                console.log(j)
+            }
+        })(j))
+    }
+    arr_j[3]();
+    console.log(arr_j[3]);
     for(var j=0,arr_j=[];j<5;j++){
         arr_j[j]=function(num){
             return function(){
@@ -30,7 +30,7 @@
             }
         }(j);
     }
-    // console.log(arr_j[3]())//3
+     console.log(arr_j[3]())//3
 
     for (var i = 0; i < 5; i++) {
       setTimeout((function(i) {
