@@ -5,54 +5,45 @@
 	<title>Document</title>
 </head>
 <body>
-	<div id="ele">点我</div>
+
 </body>
 <script>
-	// function superType(){
-	// 	this.colors=["red","green"]
-	// }
-	// superType.prototype={
-	// 	fun:function(){
-	// 		console.log(this.colors)
-	// 	}
-	// }
-	// function subType(){
+	 function superType(){
+	 	this.colors=["red","green"]
+	 }
+	 superType.prototype={
+	 	fun:function(){
+	 		console.log(this.colors)
+	 	}
+	 }
+	 function subType(){
 
-	// }
-	// subType.prototype=new superType();
-	// var sub=new subType();
-	// sub.fun();
-	// var sub2=new subType();
-	// sub2.colors.push("black");
-	// sub.fun();
+	 }
+	 subType.prototype=new superType();
+	 var sub=new subType();
+	 sub.fun();
+	 var sub2=new subType();
+	 sub2.colors.push("black");
+	 sub.fun();
 
-	// function superType(){
-	// 	this.colors=["red","green"];
-	// }
-	// superType.prototype={
-	// 	fun:function(){
-	// 		console.log(this.colors)
-	// 	}
-	// }
-	// function subType(){
-	// 	superType.bind(this)()
-	// }
-	// subType.prototype=new superType();
-	// var sub=new subType();
-	// sub.fun();
-	// var sub2=new subType();
-	// sub2.colors.push("black");
-	// sub.fun();
-	// 
-	var ele=document.getElementById("ele");
-	ele.addEventListener("myEvent", function(event) {
-	    alert("create myEvent"+event.detail);
-	});
+	 function superType(){
+	 	this.colors=["red","green"];
+	 }
+	 superType.prototype={
+	 	fun:function(){
+	 		console.log(this.colors)
+	 	}
+	 }
+	 function subType(){
+	 	superType.bind(this)()
+	 }
+	 subType.prototype=new superType();
+	 var sub=new subType();
+	 sub.fun();
+	 var sub2=new subType();
+	 sub2.colors.push("black");
+	 sub.fun();
 
-	// 创建
-	var evt = document.createEvent("CustomEvent");
-	// 初始化
-	evt.initCustomEvent("myEvent", true, false," is ok");
-	ele.dispatchEvent(evt);
+
 </script>
 </html>
