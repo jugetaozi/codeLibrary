@@ -54,13 +54,10 @@
     //自定义事件
     var ele=document.getElementById("ele");
     ele.addEventListener("myEvent", function(event) {
-        console.log("create myEvent"+event.detail);
+        alert("create myEvent"+event.detail);
     });
-
-    // 创建
-    var evt = document.createEvent("CustomEvent");
-    // 初始化
-    evt.initCustomEvent("myEvent", true, false," is ok");
+    //var evt= new Event('myEvent');//不支持传参
+    var evt= new CustomEvent('myEvent', { 'detail': " is ok" });
     ele.dispatchEvent(evt);
 </script>
 </body>
