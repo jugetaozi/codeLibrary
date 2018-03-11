@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监控错误</title>
+</head>
+<body>
+
+</body>
+<script>
+    window.addEventListener('error',function(e){
+        console.log(e)
+    },true)//这里必须是true，因为这个事件只能捕获
+</script>
+<script src="/hao124.com/hao.js" onerror="console.log(1)"></script>
+</html>
