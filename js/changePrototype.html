@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  //关于修改原型
+  function Pen() {}
+  var pencil = new Pen();
+  Pen.prototype = {
+    constructor: Pen,
+    color: "red",
+    printColor: function () {
+      alert(this.color);
+    }
+  };
+  var pencil2 = new Pen();
+  console.log(Object.getPrototypeOf(pencil2))
+  console.log(Object.getPrototypeOf(pencil))
+  try {
+    pencil.printColor(); //pencil.printColor() is not a function
+    pencil2.printColor();//try 也会阻塞下面的代码 如果有错误 直接进入catch
+  } catch (error) {
+    console.log(error);
+  }
+</script>
+
+</html>

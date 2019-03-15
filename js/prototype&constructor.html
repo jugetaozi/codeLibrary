@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例和构造函数和原型对象的种种关系</title>
+</head>
+<body>
+<script>
+    console.log("实例对象的constructor属性来源")
+    function Foo(){};
+    var foo=new Foo();
+    console.log(Foo.prototype);
+    console.log(foo);
+    console.log(Foo.prototype.constructor===foo.constructor);
+    console.log(Array)
+</script>
+</body>
+</html>

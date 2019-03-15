@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+	 function superType(){
+	 	this.colors=["red","green"]
+	 }
+	 superType.prototype={
+	 	fun:function(){
+	 		console.log(this.colors)
+	 	}
+	 }
+	 function subType(){
+
+	 }
+	 subType.prototype=new superType();
+	 var sub=new subType();
+	 sub.fun();
+	 var sub2=new subType();
+	 sub2.colors.push("black");
+	 sub.fun();
+
+	 function superType(){
+	 	this.colors=["red","green"];
+	 }
+	 superType.prototype={
+	 	fun:function(){
+	 		console.log(this.colors)
+	 	}
+	 }
+	 function subType(){
+	 	superType.bind(this)()
+	 }
+	 subType.prototype=new superType();
+	 var sub=new subType();
+	 sub.fun();
+	 var sub2=new subType();
+	 sub2.colors.push("black");
+	 sub.fun();
+
+
+</script>
+</html>

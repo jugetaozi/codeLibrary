@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    input,label{
+            float: right;
+        }
+            input:checked+label{
+               color: green;
+            }
+
+    </style>
+</head>
+
+<body>
+  <div id="tap">000</div>
+  <div>
+    <input id="brother" type="checkbox">
+    <label for="brother">test-brother-element</label>
+  </div>
+  <script>
+    var id = 1;
+
+    function testBind() {
+      alert(this.id)
+    }
+
+    function Bind(fn, context) {
+      var self = this;
+      fn = function () {
+        self.testBind.apply(context);
+      };
+      return fn
+    }
+    //  document.querySelector('#tap').addEventListener('click',window.testBind.bind(window));
+    document.querySelector('#tap').addEventListener('click', Bind(testBind, this))
+  </script>
+</body>
+
+</html>

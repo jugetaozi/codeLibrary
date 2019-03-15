@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var s1="text";
+	s1.color="red";
+	console.log(s1.color);//undefined
+	var s_obj=String("text");
+	s_obj.color='red';
+	console.log(s_obj.color);//undefined
+	var s_obj_new=new String("text");
+	s_obj_new.color='red';
+	console.log(s_obj_new.color);//red
+</script>
+</html>
